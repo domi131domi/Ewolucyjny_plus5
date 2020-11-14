@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algorytm.cpp" />
     <ClCompile Include="Ewolucyjny_plus5.cpp" />
+    <ClCompile Include="Osobnik.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Algorytm.h" />
+    <ClInclude Include="Osobnik.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
