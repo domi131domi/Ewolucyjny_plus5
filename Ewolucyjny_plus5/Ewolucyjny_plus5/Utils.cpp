@@ -1,0 +1,4 @@
+#include <exception>
+
+namespace Utils {
+}
