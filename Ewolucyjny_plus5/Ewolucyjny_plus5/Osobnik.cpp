@@ -4,13 +4,9 @@ Osobnik::Osobnik()
 {
 }
 
-Osobnik::Osobnik(Osobnik* rodzic1, Osobnik* rodzic2)
+Osobnik* Osobnik::stworz_dziecko(Osobnik* rodzic2)
 {
-	jako_dziecko(rodzic1, rodzic2);
-}
-
-void Osobnik::jako_dziecko(Osobnik* rodzic1, Osobnik* rodzic2)
-{
+	return new Osobnik();
 }
 
 void Osobnik::mutuj()
