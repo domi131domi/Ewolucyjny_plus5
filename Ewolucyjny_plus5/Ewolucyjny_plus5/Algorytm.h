@@ -2,6 +2,7 @@
 #define ALGORYTM_DEF
 #include "Osobnik.h"
 #include <functional>
+#include <limits>
 #include <algorithm>
 #include "Punkt.h"
 
@@ -15,15 +16,26 @@ public:
 	void liczbaSelekcji(unsigned liczba_selekcji);
 	unsigned nr_aktualna_populacja = 0;
 private:
-	void krzyzowanie(Osobnik** rodzice, Osobnik** dzieci);
+	struct Przedzial
+	{
+		double pocz;
+		double kon;
+	};
+
+	void selekcja(Osobnik** populacja, unsigned rozmiar_populacji);
+	void krzyzowanie(Osobnik** dzieci);
 	void mutacja(Osobnik** populacja_pomocnicza);
 	void ocen(Osobnik** populacja, unsigned rozmiar_populacji);
 	void sukcesja(Osobnik** populacja_pomocnicza);
+	void selekcjaElitarna(Osobnik** populacja_pomocnicza);
+
 	unsigned rozmiar_populacji = 0;
 	unsigned liczba_selekcji = 0;
 	unsigned liczba_dzieci = 0;
 	Osobnik** populacja = nullptr;
-	void selekcjaElitarna(Osobnik** populacja_pomocnicza);
+	float* oceny = nullptr;
+	Przedzial* prawdopod = nullptr;
+
 	static bool comp(Osobnik* os1, Osobnik* os2);
 };
 

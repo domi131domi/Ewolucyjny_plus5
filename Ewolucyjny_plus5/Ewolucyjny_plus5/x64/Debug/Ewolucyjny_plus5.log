@@ -1,0 +1,11 @@
+﻿  Algorytm.cpp
+C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\Ewolucyjny_plus5\Punkt.h(51,17): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\Ewolucyjny_plus5\Punkt.h(56,17): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  Ewolucyjny_plus5.cpp
+C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\Ewolucyjny_plus5\Punkt.h(51,17): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\Ewolucyjny_plus5\Punkt.h(56,17): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  Punkt.cpp
+C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\Ewolucyjny_plus5\Punkt.h(51,17): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\Ewolucyjny_plus5\Punkt.h(56,17): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  Generowanie kodu...
+  Ewolucyjny_plus5.vcxproj -> C:\Users\Rafał\source\repos\Ewolucyjny_plus5\Ewolucyjny_plus5\x64\Debug\Ewolucyjny_plus5.exe
