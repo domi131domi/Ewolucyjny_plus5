@@ -11,8 +11,8 @@ Algorytm::Algorytm(const unsigned rozmiar_populacji, Osobnik** populacja) noexce
 }
 Algorytm::~Algorytm() noexcept
 {
-	delete [] oceny;
-	delete [] prawdopod;
+	delete[] oceny;
+	delete[] prawdopod;
 }
 
 void Algorytm::ustawParametry(unsigned rozmiar_populacji, Osobnik** populacja) noexcept
@@ -29,11 +29,13 @@ void Algorytm::start(unsigned licznik_populacji)
 	for (unsigned i = 0; i < licznik_populacji; ++i)
 	{
 		ocen(populacja, rozmiar_populacji);
-		selekcja(populacja, rozmiar_populacji);
+		std::cout << "pocz¹tek" << std::endl;
 		for (unsigned i = 0; i < rozmiar_populacji; ++i)
 		{
-			std::cout << oceny[i] << " " << prawdopod[i].pocz << " " << prawdopod[i].kon << std::endl;
+			std::cout << "x: " << dynamic_cast<Punkt*>(populacja[i])->x << " y: " << dynamic_cast<Punkt*>(populacja[i])->y << " ocena: " << dynamic_cast<Punkt*>(populacja[i])->getOcena() << std::endl;
 		}
+		std::cout << std::endl;
+		selekcja(populacja, rozmiar_populacji);
 		krzyzowanie(dzieci);
 		mutacja(dzieci);
 		ocen(dzieci, rozmiar_populacji);
@@ -144,13 +146,18 @@ void Algorytm::ocen(Osobnik** populacja, unsigned rozmiar_populacji)
 		oceny[i] = populacja[i]->getOcena();
 	}
 
+	/*
 	float qmin = oceny[0];
 	float qmax = oceny[rozmiar_populacji - 1];
-
-	for (unsigned i = 0; i < rozmiar_populacji; ++i)
+	if (qmax != qmin)
 	{
-		oceny[i] = (oceny[i] - qmin) / (qmax - qmin);
+		for (unsigned i = 0; i < rozmiar_populacji; ++i)
+		{
+			oceny[i] = 1 - ((oceny[i] - qmin) / (qmax - qmin)); // Minimalizacja
+			//oceny[i] =  (oceny[i] - qmin) / (qmax - qmin);	// Maksymalizacja
+		}
 	}
+	*/
 
 
 }

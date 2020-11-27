@@ -11,34 +11,32 @@ int main()
 	srand((unsigned)time(NULL));
 	try 
 	{
-		const unsigned int liczba = 50;
-		//Init
-		Osobnik* populacja[liczba];
-		cout << "Podaj prawdopodobienstwo mutacji z zakresu <0, 1>: ";
-		float m;
-		cin >> m;
-		cout << "/nPodaj odchylenie standardowe mutacji: ";
-		float o;
-		cin >> o;
-		for (unsigned i = 0; i < liczba; ++i)
+		const unsigned Rozmiar_Populacji = 50;
+		const float P_Mutacji = 0.3;
+		const float Odchyl = 1.0;
+		const unsigned Ilosc_Populacji = 100;
+		Osobnik** populacja = new Osobnik*[Rozmiar_Populacji];
+		for (unsigned i = 0; i < Rozmiar_Populacji; ++i)
 		{
-			populacja[i] = new Punkt(m, o);
+			populacja[i] = new Punkt(P_Mutacji, Odchyl);
 			dynamic_cast<Punkt*>(populacja[i])->x = (float)(rand()%50);
 			dynamic_cast<Punkt*>(populacja[i])->y = (float)(rand()%50);
 		}
 
 		//wrzucamy tablice osobnikow startowych wraz z ich liczba
-		Algorytm a(liczba, populacja);
+		Algorytm a(Rozmiar_Populacji, populacja);
 		//startujemy na 20 populacji
-		a.start(20);
+		a.start(Ilosc_Populacji);
 
 		//wynik
 		std::cout << "t:" << a.nr_aktualna_populacja << std::endl;
-		for (unsigned i = 0; i < liczba; ++i)
+		for (unsigned i = 0; i < Rozmiar_Populacji; ++i)
 		{
 			std::cout << "x: " << dynamic_cast<Punkt*>(populacja[i])->x << " y: " << dynamic_cast<Punkt*>(populacja[i])->y << " ocena: " << dynamic_cast<Punkt*>(populacja[i])->getOcena() << std::endl;
 			delete populacja[i];
 		}
+
+		delete[] populacja;
 	}
 	catch (std::exception& e)
 	{
