@@ -143,12 +143,14 @@
     <ClCompile Include="Ewolucyjny_plus5.cpp" />
     <ClCompile Include="Osobnik.cpp" />
     <ClCompile Include="Punkt.cpp" />
+    <ClCompile Include="test_optimization.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorytm.h" />
     <ClInclude Include="Osobnik.h" />
     <ClInclude Include="Punkt.h" />
+    <ClInclude Include="test_optimization.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
